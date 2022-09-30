@@ -1,4 +1,29 @@
-<h1>Pastelaria do Zé</h1>
-<p>Faça seu pedido:</p>
+<div class="flex flex-col space-y-2 px-4 py-2">
 
-<pa-qty-selector></pa-qty-selector>
+  <div class="flex-auto">
+    <h3 class="font-medium text-xl">Faça seu pedido:</h3>
+  </div>
+
+  <div class="flex place-content-center">
+    <span
+      class="px-4 py-2 font-bold text-2xl border border-sky-500 border-2">Valor unitário {{ unitValue | currency:'R$' }}</span>
+  </div>
+
+  <div class="h-8"></div>
+
+  <div class="grid grid-cols-2 gap-4 content-start">
+    <ng-container *ngFor="let flavor of flavors">
+      <pa-qty-selector [flavor]="flavor.name" [(value)]="flavor.qty"></pa-qty-selector>
+    </ng-container>
+  </div>
+
+  <div class="h-2"></div>
+
+  <div class="flex flex-row space-x-8">
+
+    <span class="text-2xl font-bold p-2">{{total}} Pastel(s)</span>
+    <button class="btn btn-red btn-lg border border-2" [class.btn-red-disabled]="total <= 0">
+      Pagar {{ total * unitValue| currency:'R$' }}
+    </button>
+  </div>
+</div>

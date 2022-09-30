@@ -8,10 +8,23 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 export class QtySelectorComponent implements OnInit {
   @Input() value: number = 0;
   @Output() valueChange = new EventEmitter<number>();
+  @Input() flavor: string = '';
 
   constructor() {
   }
 
   ngOnInit(): void {
+  }
+
+  add() {
+    this.value++;
+    this.valueChange.emit(this.value);
+  }
+
+  substract() {
+    if (this.value >= 1) {
+      this.value--;
+      this.valueChange.emit(this.value);
+    }
   }
 }

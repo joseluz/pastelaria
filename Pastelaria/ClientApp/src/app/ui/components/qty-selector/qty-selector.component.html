@@ -1,9 +1,8 @@
-<div class="flex flex-row space-x-4">
-
-  <button class="p-2">-</button>
-
-  <span class="text-xl-start font-medium m-3">{{ value }}</span>
-
-  <button class="p-2">+</button>
-
+<div class="flex flex-row space-x-4 border-b-1 border-solid mb-2 px-4">
+  <button class="btn btn-blue text-2xl" (click)="substract()">-</button>
+  <span class="text-3xl pt-2 font-medium">{{ value }}</span>
+  <button class="btn btn-blue text-2xl" (click)="add()">+</button>
+  <div class="w-1"></div>
+  <span class="text-2xl pt-2 font-medium">{{ flavor }}</span>
 </div>
+<hr>
