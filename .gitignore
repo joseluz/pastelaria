@@ -363,12 +363,12 @@ FodyWeavers.xsd
 Commons/.DS_Store
 .DS_Store
 Shipments.Service/appsettings.Development.json
-/Web/appsettings.Development.json
-Web/appsettings.Development.json
-Web/wwwroot/api/specification.json
+/Pastelaria/appsettings.Development.json
+Pastelaria/appsettings.Development.json
+Pastelaria/wwwroot/api/specification.json
 
-Web/ClientApp/.angular
-/Web/package-lock.json
+Pastelaria/ClientApp/.angular
+/Pastelaria/package-lock.json
 /package-lock.json
 /Web.Tests/appsettings.Test.json
 /.idea
