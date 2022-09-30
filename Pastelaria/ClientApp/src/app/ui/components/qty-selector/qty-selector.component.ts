@@ -16,12 +16,12 @@ export class QtySelectorComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  add() {
+  add(): void {
     this.value++;
     this.valueChange.emit(this.value);
   }
 
-  substract() {
+  substract(): void {
     if (this.value >= 1) {
       this.value--;
       this.valueChange.emit(this.value);

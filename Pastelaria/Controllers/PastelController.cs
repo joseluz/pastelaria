@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Pastelaria.Resources;
 
 namespace Pastelaria.Controllers
 {
@@ -14,8 +15,9 @@ namespace Pastelaria.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<WeatherForecast> Get()
+        public IEnumerable<PastelResouce> Get()
         {
+            return new List<PastelResouce>();
         }
     }
 }
