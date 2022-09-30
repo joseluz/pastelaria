@@ -5,10 +5,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { NavMenuComponent } from './ui/components/nav-menu/nav-menu.component';
 import { HomeComponent } from './ui/home/home.component';
 import { CounterComponent } from './counter/counter.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
+import { ComponentsModule } from "./ui/components/components.module";
 
 @NgModule({
   declarations: [
@@ -16,11 +16,11 @@ import { FetchDataComponent } from './fetch-data/fetch-data.component';
     HomeComponent,
     CounterComponent,
     FetchDataComponent,
-    NavMenuComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
+    ComponentsModule,
     FormsModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
