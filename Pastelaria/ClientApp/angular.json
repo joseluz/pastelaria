@@ -129,5 +129,8 @@
       }
     }
   },
-  "defaultProject": "Pastelaria"
+  "defaultProject": "Pastelaria",
+  "cli": {
+    "analytics": "8b9180d5-e034-484b-b9eb-bd167f860c36"
+  }
 }
