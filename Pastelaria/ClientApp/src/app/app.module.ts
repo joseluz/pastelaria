@@ -9,6 +9,8 @@ import { HomeComponent } from './ui/home/home.component';
 import { CounterComponent } from './counter/counter.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { ComponentsModule } from "./ui/components/components.module";
+import { ServicesModule } from "./services/services.module";
+import { RepositoriesModule } from "./remote/repositories/repositories.module";
 
 @NgModule({
   declarations: [
@@ -21,6 +23,8 @@ import { ComponentsModule } from "./ui/components/components.module";
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
     ComponentsModule,
+    ServicesModule,
+    RepositoriesModule,
     FormsModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
