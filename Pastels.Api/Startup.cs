@@ -1,5 +1,6 @@
 ﻿using Pastels.Application;
 using Pastels.Application.Repositories;
+using Pastels.MongoDB.Integration;
 using Pastels.Persistence;
 
 namespace Web
@@ -17,9 +18,11 @@ namespace Web
         {
             services.AddControllers();
 
+            services.AddMongoDBIntegration(Configuration);
             services.AddTransient<IPastelRepository, PastelRepository>();
             services.AddTransient<IPastelService, PastelService>();
         }
+
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {

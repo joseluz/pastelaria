@@ -21,6 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\MongoDB.Integration\Pastels.MongoDB.Integration.csproj" />
     <ProjectReference Include="..\Pastels.Application\Pastels.Application.csproj" />
     <ProjectReference Include="..\Pastels.Persistence\Pastels.Persistence.csproj" />
   </ItemGroup>

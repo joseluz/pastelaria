@@ -1,4 +1,4 @@
-﻿namespace MongoDB.Integration
+﻿namespace Pastels.MongoDB.Integration
 {
     public class MongoConnectionString
     {

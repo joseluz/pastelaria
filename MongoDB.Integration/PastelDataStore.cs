@@ -3,7 +3,7 @@ using MongoDB.Driver;
 using Pastels.Persistence.DataStores;
 using Pastels.Persistence.Docs;
 
-namespace MongoDB.Integration
+namespace Pastels.MongoDB.Integration
 {
     public class PastelDataStore : BasicDataSource<PastelDocument>, IPastelDataStore
     {

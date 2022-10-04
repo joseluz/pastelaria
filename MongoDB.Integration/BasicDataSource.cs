@@ -3,7 +3,7 @@ using MongoDB.Bson.Serialization;
 using MongoDB.Driver;
 using Pastels.Persistence.Docs;
 
-namespace MongoDB.Integration
+namespace Pastels.MongoDB.Integration
 {
     public abstract class BasicDataSource<T> : AbstractMongoDataStore where T : IDocument
     {

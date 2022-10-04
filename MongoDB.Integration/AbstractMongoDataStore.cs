@@ -1,6 +1,6 @@
 ﻿using MongoDB.Driver;
 
-namespace MongoDB.Integration
+namespace Pastels.MongoDB.Integration
 {
     abstract public class AbstractMongoDataStore
     {
