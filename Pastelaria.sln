@@ -3,13 +3,23 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pastelaria", "Pastelaria\Pastelaria.csproj", "{C07C58F0-00BD-4AEA-8BA0-D09FEDDEF321}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pastelaria", "Pastelaria\Pastelaria.csproj", "{C07C58F0-00BD-4AEA-8BA0-D09FEDDEF321}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application", "Application\Application.csproj", "{0DFE68A2-2F91-4F34-9A44-FCC1937D7F44}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application", "Application\Application.csproj", "{0DFE68A2-2F91-4F34-9A44-FCC1937D7F44}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Pastels", "Pastels", "{E79DF7E3-7110-4BAE-81E1-5D33AE454E2D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Orders", "Orders", "{D43C2442-2C5C-4FF5-A38D-76F40CBCB5F7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pastels.Api", "Pastels.Api\Pastels.Api.csproj", "{95B03038-59CE-4CF8-A6CC-B714B5DE5F3C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pastels.Persistence", "Pastels.Persistence\Pastels.Persistence.csproj", "{5592070F-1937-4DA5-A1C2-726A9E64C3BF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PastelProvider.Integration", "PastelProvider.Integration\PastelProvider.Integration.csproj", "{3D05864A-AD21-4080-909A-C55CC2B0FBCA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MongoDB.Integration", "MongoDB.Integration\MongoDB.Integration.csproj", "{485C002F-5038-4618-B10B-460248154540}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pastels.Application", "Pastels.Application\Pastels.Application.csproj", "{6278BEB4-4E91-4BE2-AC0D-9577AB020070}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,9 +35,35 @@ Global
 		{0DFE68A2-2F91-4F34-9A44-FCC1937D7F44}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0DFE68A2-2F91-4F34-9A44-FCC1937D7F44}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0DFE68A2-2F91-4F34-9A44-FCC1937D7F44}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95B03038-59CE-4CF8-A6CC-B714B5DE5F3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95B03038-59CE-4CF8-A6CC-B714B5DE5F3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95B03038-59CE-4CF8-A6CC-B714B5DE5F3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95B03038-59CE-4CF8-A6CC-B714B5DE5F3C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5592070F-1937-4DA5-A1C2-726A9E64C3BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5592070F-1937-4DA5-A1C2-726A9E64C3BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5592070F-1937-4DA5-A1C2-726A9E64C3BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5592070F-1937-4DA5-A1C2-726A9E64C3BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D05864A-AD21-4080-909A-C55CC2B0FBCA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D05864A-AD21-4080-909A-C55CC2B0FBCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D05864A-AD21-4080-909A-C55CC2B0FBCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D05864A-AD21-4080-909A-C55CC2B0FBCA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{485C002F-5038-4618-B10B-460248154540}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{485C002F-5038-4618-B10B-460248154540}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{485C002F-5038-4618-B10B-460248154540}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{485C002F-5038-4618-B10B-460248154540}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6278BEB4-4E91-4BE2-AC0D-9577AB020070}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6278BEB4-4E91-4BE2-AC0D-9577AB020070}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6278BEB4-4E91-4BE2-AC0D-9577AB020070}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6278BEB4-4E91-4BE2-AC0D-9577AB020070}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{95B03038-59CE-4CF8-A6CC-B714B5DE5F3C} = {E79DF7E3-7110-4BAE-81E1-5D33AE454E2D}
+		{5592070F-1937-4DA5-A1C2-726A9E64C3BF} = {E79DF7E3-7110-4BAE-81E1-5D33AE454E2D}
+		{485C002F-5038-4618-B10B-460248154540} = {E79DF7E3-7110-4BAE-81E1-5D33AE454E2D}
+		{6278BEB4-4E91-4BE2-AC0D-9577AB020070} = {E79DF7E3-7110-4BAE-81E1-5D33AE454E2D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4595250E-731F-454B-B11C-8B8D8DB8AD58}
