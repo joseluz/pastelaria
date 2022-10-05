@@ -1,0 +1,34 @@
+version: '3.4'
+
+services:
+  mongodb:
+    image: mongo:latest
+    environment:
+    - MONGO_INITDB_ROOT_USERNAME=admin
+    - MONGO_INITDB_ROOT_PASSWORD=notAsecret
+    ports:
+    - '27017:27017'
+    
+  mongo-seed:
+    build: ./MongoSeed
+    depends_on:
+    - mongodb
+    
+  pastels.api:
+    image: ${DOCKER_REGISTRY-}pastelsapi
+    build:
+      context: .
+      dockerfile: Pastels.Api/Dockerfile
+    depends_on:
+    - mongodb
+    environment:
+      - ConnectionStrings__Mongo=mongodb://admin:notAsecret@mongodb:27017/?authSource=admin&readPreference=primary&appname=pastelaria&directConnection=true&ssl=false
+
+  pastelaria:
+    image: ${DOCKER_REGISTRY-}pastelaria
+    build:
+      context: .
+      dockerfile: Pastelaria/Dockerfile
+    depends_on:
+    - pastels.api
+

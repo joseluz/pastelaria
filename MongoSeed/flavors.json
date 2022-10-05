@@ -1,0 +1,27 @@
+[
+    {
+        "Flavor":"Calabresa com queijo",
+        "Ingredients": "Calabresa, mussarela",
+        "IsSweet": false
+    },
+    {
+        "Flavor":"Pizza",
+        "Ingredients": "Mussarela, Tomate, oregano",
+        "IsSweet": false
+    },
+    {
+        "Flavor":"Carne com queijo",
+        "Ingredients": "Carne moida, mussarela",
+        "IsSweet": false
+    },
+    {
+        "Flavor":"Carne",
+        "Ingredients": "Carne moida",
+        "IsSweet": false
+    },
+    {
+        "Flavor":"Frango com catupiry",
+        "Ingredients": "Frango desfiado, catupiry",
+        "IsSweet": false
+    }
+]

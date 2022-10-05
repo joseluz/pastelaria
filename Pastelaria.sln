@@ -19,7 +19,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PastelProvider.Integration"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pastels.MongoDB.Integration", "Pastels.MongoDB.Integration\Pastels.MongoDB.Integration.csproj", "{485C002F-5038-4618-B10B-460248154540}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pastels.Application", "Pastels.Application\Pastels.Application.csproj", "{6278BEB4-4E91-4BE2-AC0D-9577AB020070}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pastels.Application", "Pastels.Application\Pastels.Application.csproj", "{6278BEB4-4E91-4BE2-AC0D-9577AB020070}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{6A724162-E15B-4A1F-B983-78C9183C59B8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -55,6 +57,10 @@ Global
 		{6278BEB4-4E91-4BE2-AC0D-9577AB020070}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6278BEB4-4E91-4BE2-AC0D-9577AB020070}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6278BEB4-4E91-4BE2-AC0D-9577AB020070}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A724162-E15B-4A1F-B983-78C9183C59B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A724162-E15B-4A1F-B983-78C9183C59B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A724162-E15B-4A1F-B983-78C9183C59B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A724162-E15B-4A1F-B983-78C9183C59B8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

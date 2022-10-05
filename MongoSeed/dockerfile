@@ -1,0 +1,16 @@
+#### imagem base do dockerfile
+FROM mongo as mongodb
+
+#### configurando dados de acesso do mongo
+ENV MONGO_INITDB_ROOT_USERNAME=admin
+ENV MONGO_INITDB_ROOT_PASSWORD=notAsecret
+
+
+#### imagem base do dockerfile
+FROM mongo
+
+#### copiando um arquivo pro container
+COPY flavors.json .
+
+#### executa um comando no container
+CMD mongoimport --uri "mongodb://admin:notAsecret@mongodb:27017/?authSource=admin&readPreference=primary&appname=MongoDB%20Compass&directConnection=true&ssl=false" --db pastelaria --collection Pastel --type json  --file /flavors.json --jsonArray
