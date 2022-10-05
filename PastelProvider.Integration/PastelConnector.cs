@@ -12,10 +12,14 @@ namespace PastelProvider.Integration
     {
         private readonly HttpClient httpClient;
 
-        public PastelConnector(HttpClient httpClient, string baseUrl)
+        public PastelConnector(HttpClient httpClient, PastelConnectorSettings settings)
         {
+            if (string.IsNullOrEmpty(settings.BaseUrl))
+            {
+                throw new ArgumentNullException(nameof(settings.BaseUrl));
+            }
             this.httpClient = httpClient;
-            this.httpClient.BaseAddress = new Uri(baseUrl);
+            this.httpClient.BaseAddress = new Uri(settings.BaseUrl);
         }
 
         public async Task<IList<Pastel>> FindAll()

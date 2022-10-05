@@ -1,6 +1,10 @@
-﻿using Newtonsoft.Json.Serialization;
+﻿using Application;
+using Application.Connectors;
+using Newtonsoft.Json.Serialization;
 using NSwag.AspNetCore;
 using System.Text.Json;
+using Microsoft.Extensions.DependencyInjection;
+using PastelProvider.Integration;
 
 namespace Pastelaria
 {
@@ -18,7 +22,13 @@ namespace Pastelaria
             services
                 .AddControllers()
                 .AddJsonOptions(options => { options.JsonSerializerOptions.PropertyNamingPolicy = JsonNamingPolicy.CamelCase; });
-            
+
+            services.AddHttpClient();
+            services.AddTransient<IPastelService, PastelService>();
+            services.AddTransient<IPastelConnector, PastelConnector>();
+            var pastelSettings = new PastelConnectorSettings(Configuration.GetValue<string>("PastelApiUrl"));
+            services.AddSingleton(pastelSettings);
+
             services.AddOpenApiDocument(document =>
             {
                 document.SerializerSettings = new Newtonsoft.Json.JsonSerializerSettings()
@@ -34,6 +44,16 @@ namespace Pastelaria
             });
 
         }
+
+        private HttpMessageHandler ByPassSslLocally(IServiceProvider arg)
+        {
+#if DEBUG
+            return new HttpClientHandler { ServerCertificateCustomValidationCallback = (message, cert, chain, errors) => { return true; } };
+#else
+            return new HttpClientHandler();
+#endif
+        }
+
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
@@ -66,6 +86,12 @@ namespace Pastelaria
                             .AllowAnyHeader();
                 });
             }
+
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllers();
+                endpoints.MapFallbackToFile("index.html");
+            });
         }
     }
 }
