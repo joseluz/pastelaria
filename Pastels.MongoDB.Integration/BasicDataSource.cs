@@ -1,11 +1,12 @@
 ﻿using MongoDB.Bson;
 using MongoDB.Bson.Serialization;
 using MongoDB.Driver;
+using Pastels.Persistence.DataStores;
 using Pastels.Persistence.Docs;
 
 namespace Pastels.MongoDB.Integration
 {
-    public abstract class BasicDataSource<T> : AbstractMongoDataStore where T : IDocument
+    public abstract class BasicDataSource<T> : AbstractMongoDataStore, IDataStore<T> where T : IDocument
     {
         private readonly MongoCollectionName collectionName;
         private readonly IIdGenerator idGenerator;
@@ -23,6 +24,11 @@ namespace Pastels.MongoDB.Integration
         protected IMongoCollection<T> GetCollection()
         {
             return GetDatabase().GetCollection<T>(collectionName);
+        }
+
+        public virtual async Task<IList<T>> FindAll()
+        {
+            return await GetCollection().AsQueryable().ToListAsync();
         }
 
         public virtual async Task<T> Create(T item)

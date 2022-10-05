@@ -3,6 +3,7 @@
     public class Pastel
     {
         public string? Name { get; set; }
-        public IList<string> Ingredients { get; set; } = new List<string>();
+        public string? Ingredients { get; set; }
+        public bool IsSweet { get; set; }
     }
 }

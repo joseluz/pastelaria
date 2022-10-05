@@ -14,12 +14,13 @@ namespace Pastels.Application
 
         public async Task<IEnumerable<Pastel>> FindAll()
         {
-            var a= Enumerable.Range(1, 5).Select(index => new Pastel
-            {
-                Name = "Pastel" + index,
-                Ingredients = new List<string>() { "Ingredient" + index, "Ingredient" + index * 2 }
-            }).ToArray();
-            return await Task.FromResult(a);
+            return await pastelRepository.FindAll();
+            //var a= Enumerable.Range(1, 5).Select(index => new Pastel
+            //{
+            //    Name = "Pastel" + index,
+            //    Ingredients = new List<string>() { "Ingredient" + index, "Ingredient" + index * 2 }
+            //}).ToArray();
+            //return await Task.FromResult(a);
         }
     }
 }

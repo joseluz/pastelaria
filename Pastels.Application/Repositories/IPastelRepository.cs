@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Pastels.Api.Resources;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,5 +9,6 @@ namespace Pastels.Application.Repositories
 {
     public interface IPastelRepository
     {
+        Task<IEnumerable<Pastel>> FindAll();
     }
 }
