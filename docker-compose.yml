@@ -23,12 +23,15 @@ services:
     - mongodb
     environment:
       - ConnectionStrings__Mongo=mongodb://admin:notAsecret@mongodb:27017/?authSource=admin&readPreference=primary&appname=pastelaria&directConnection=true&ssl=false
+    ports:
+    - '15260:80' 
 
-  pastelaria:
-    image: ${DOCKER_REGISTRY-}pastelaria
-    build:
-      context: .
-      dockerfile: Pastelaria/Dockerfile
-    depends_on:
-    - pastels.api
-
+  # pastelaria:
+  #   image: ${DOCKER_REGISTRY-}pastelaria
+  #   build:
+  #     context: .
+  #     dockerfile: Pastelaria/Dockerfile
+  #   depends_on:
+  #   - pastels.api
+  #   ports:
+  #   - '44467:80'
