@@ -33,7 +33,7 @@ export class PastelClient implements IPastelClient {
     }
 
     get(): Observable<PastelResouce[]> {
-        let url_ = this.baseUrl + "/Pastel";
+        let url_ = this.baseUrl + "/api/Pastel";
         url_ = url_.replace(/[?&]$/, "");
 
         let options_ : any = {

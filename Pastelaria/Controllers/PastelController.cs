@@ -5,7 +5,7 @@ using Pastelaria.Resources;
 namespace Pastelaria.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class PastelController : ControllerBase
     {
         private readonly ILogger<PastelController> _logger;
