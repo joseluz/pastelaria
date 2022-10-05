@@ -13,7 +13,7 @@ export class PastelRepository {
   findAllFlavors(): Observable<Array<Pastel>> {
     return this.pastelClient.get()
       .pipe(
-        map((pastels: PastelResouce[]) => [new Pastel()])
+        map((pastels: PastelResouce[]) => pastels.map(p => new Pastel({ name: p.name ?? "", ingredients: p.ingredients ?? "", isSweet: p.isSweet, })))
       );
   }
 }
