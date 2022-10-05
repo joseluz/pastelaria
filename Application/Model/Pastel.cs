@@ -10,6 +10,7 @@ namespace Application.Model
     {
         public string Flavor { get; set; }
         public bool IsSweet { get; set; }
+        public string? Ingredients { get; set; }
         public decimal CurrentPrice { get; set; }
 
         public Pastel(string flavor)

@@ -90,6 +90,9 @@ export class PastelClient implements IPastelClient {
 
 export class PastelResouce implements IPastelResouce {
     name!: string | null;
+    ingredients!: string | null;
+    currentPrice!: number;
+    isSweet!: boolean;
 
     constructor(data?: IPastelResouce) {
         if (data) {
@@ -103,6 +106,9 @@ export class PastelResouce implements IPastelResouce {
     init(_data?: any) {
         if (_data) {
             this.name = _data["name"] !== undefined ? _data["name"] : <any>null;
+            this.ingredients = _data["ingredients"] !== undefined ? _data["ingredients"] : <any>null;
+            this.currentPrice = _data["currentPrice"] !== undefined ? _data["currentPrice"] : <any>null;
+            this.isSweet = _data["isSweet"] !== undefined ? _data["isSweet"] : <any>null;
         }
     }
 
@@ -116,12 +122,18 @@ export class PastelResouce implements IPastelResouce {
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
         data["name"] = this.name !== undefined ? this.name : <any>null;
+        data["ingredients"] = this.ingredients !== undefined ? this.ingredients : <any>null;
+        data["currentPrice"] = this.currentPrice !== undefined ? this.currentPrice : <any>null;
+        data["isSweet"] = this.isSweet !== undefined ? this.isSweet : <any>null;
         return data;
     }
 }
 
 export interface IPastelResouce {
     name: string | null;
+    ingredients: string | null;
+    currentPrice: number;
+    isSweet: boolean;
 }
 
 export class SwaggerException extends Error {

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Application;
+using Microsoft.AspNetCore.Mvc;
 using Pastelaria.Resources;
 
 namespace Pastelaria.Controllers
@@ -8,16 +9,21 @@ namespace Pastelaria.Controllers
     public class PastelController : ControllerBase
     {
         private readonly ILogger<PastelController> _logger;
+        private readonly IPastelService pastelService;
 
-        public PastelController(ILogger<PastelController> logger)
+        public PastelController(ILogger<PastelController> logger,
+            IPastelService pastelService)
         {
             _logger = logger;
+            this.pastelService = pastelService;
         }
 
         [HttpGet]
-        public IEnumerable<PastelResouce> Get()
+        public async Task<IList<PastelResouce>> Get()
         {
-            return new List<PastelResouce>();
+            return (await pastelService.FindAll())
+                .Select(p=> new PastelResouce() { Name = p.Flavor, Ingredients = p.Ingredients, IsSweet = p.IsSweet, CurrentPrice = p.CurrentPrice})
+                .ToList();
         }
     }
 }
